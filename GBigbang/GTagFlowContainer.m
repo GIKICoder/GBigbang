@@ -88,17 +88,8 @@
     self.closeBtn.frame = CGRectMake((self.frame.size.width - 50)/2, CGRectGetMaxY(self.flowView.frame) + 20, 50, 25);
     self.topContentView.frame = CGRectMake(0, CGRectGetMinY(self.flowView.frame)-50, self.frame.size.width, 40);
     
-    NSArray * titles = @[@"复制",@"",@"翻译",@"搜索",@"分享"];
-    CGFloat width = (self.frame.size.width-20-40)/5;
-    CGFloat height = 30;
-    CGFloat padding = 10;
-    CGFloat leftMargin = 10;
-    [titles enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGRect rect = CGRectMake(leftMargin + idx*(padding+width), 10, width, height);
-        if (idx != 1) {
-          [self createTopButton:obj frame:rect];
-        }
-    }];
+    self.actionBtnItems = @[@"复制",@"",@"翻译",@"搜索",@"分享"];
+    
 }
 
 
@@ -122,6 +113,26 @@
 }
 
 #pragma mark - public method
+
+- (void)setActionBtnItems:(NSArray<NSString *> *)actionBtnItems
+{
+    _actionBtnItems = actionBtnItems;
+
+    if (actionBtnItems.count > 0) {
+        
+        CGFloat width = (self.frame.size.width-20-40)/5;
+        CGFloat height = 30;
+        CGFloat padding = 10;
+        CGFloat leftMargin = 10;
+        [self.topContentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        [actionBtnItems enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            CGRect rect = CGRectMake(leftMargin + idx*(padding+width), 10, width, height);
+            if (obj.length > 0) {
+                [self createTopButton:obj frame:rect];
+            }
+        }];
+    }
+}
 
 - (void)configDatas:(NSArray*)flowDatas
 {

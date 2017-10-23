@@ -30,7 +30,7 @@ typedef void(^GTagFlowViewSelectedChanged) (BOOL hasSelected);
 /// 是否按照添加顺序生成字符串 Default:NO
 @property (nonatomic, assign) BOOL  isAddingOrder;
 
-@property (nonatomic, copy ) NSArray<GTagFlowLayout*> * flowDatas;
+@property (nonatomic, strong ) NSArray<GTagFlowLayout*> * flowDatas;
 
 @property (nonatomic, copy  ) GTagFlowViewHeightChanged  heightChangedBlock;
 @property (nonatomic, copy  ) GTagFlowViewSelectedChanged  selectedChangedBlock;
