@@ -1,7 +1,7 @@
 # GBigbang
 大爆炸/分词/tagFlowView
-
 ==============
+
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/GIKICoder/GBigbang/blob/master/LICENSE)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS7+-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 
