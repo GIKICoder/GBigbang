@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2B2A552C1F9DFBAD007F5CCF /* GNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A552B1F9DFBAD007F5CCF /* GNewsDetailViewController.m */; };
+		2B2A552F1F9E0B84007F5CCF /* GCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A552E1F9E0B84007F5CCF /* GCommentCell.m */; };
 		2B772D161F9D9D4A00AB4A82 /* GPinSegmentationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B772D151F9D9D4A00AB4A82 /* GPinSegmentationListController.m */; };
 		2B772D191F9DA32400AB4A82 /* GPinHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B772D181F9DA32400AB4A82 /* GPinHistoryViewController.m */; };
 		2B7D99B91F99E389001A04CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99B81F99E389001A04CB /* AppDelegate.m */; };
@@ -46,6 +47,8 @@
 /* Begin PBXFileReference section */
 		2B2A552A1F9DFBAD007F5CCF /* GNewsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNewsDetailViewController.h; sourceTree = "<group>"; };
 		2B2A552B1F9DFBAD007F5CCF /* GNewsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNewsDetailViewController.m; sourceTree = "<group>"; };
+		2B2A552D1F9E0B84007F5CCF /* GCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCommentCell.h; sourceTree = "<group>"; };
+		2B2A552E1F9E0B84007F5CCF /* GCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCommentCell.m; sourceTree = "<group>"; };
 		2B772D141F9D9D4A00AB4A82 /* GPinSegmentationListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPinSegmentationListController.h; sourceTree = "<group>"; };
 		2B772D151F9D9D4A00AB4A82 /* GPinSegmentationListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPinSegmentationListController.m; sourceTree = "<group>"; };
 		2B772D171F9DA32400AB4A82 /* GPinHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPinHistoryViewController.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				2B772D151F9D9D4A00AB4A82 /* GPinSegmentationListController.m */,
 				2B2A552A1F9DFBAD007F5CCF /* GNewsDetailViewController.h */,
 				2B2A552B1F9DFBAD007F5CCF /* GNewsDetailViewController.m */,
+				2B2A552D1F9E0B84007F5CCF /* GCommentCell.h */,
+				2B2A552E1F9E0B84007F5CCF /* GCommentCell.m */,
 				2B7D99BD1F99E389001A04CB /* Main.storyboard */,
 				2B7D99C01F99E389001A04CB /* Assets.xcassets */,
 				2B7D99C21F99E389001A04CB /* LaunchScreen.storyboard */,
@@ -319,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B7D99BC1F99E389001A04CB /* ViewController.m in Sources */,
+				2B2A552F1F9E0B84007F5CCF /* GCommentCell.m in Sources */,
 				2B772D191F9DA32400AB4A82 /* GPinHistoryViewController.m in Sources */,
 				2B7D99F71F99EA54001A04CB /* GBigbangBox.m in Sources */,
 				2B7D99F81F99EA63001A04CB /* GTagFlowCell.m in Sources */,
