@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "GWebViewController.h"
 #import "GPinHistoryViewController.h"
+#import "GNewsDetailViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView  * tableView;
 @property (nonatomic, strong) NSArray * titles;
@@ -26,7 +27,7 @@
     
     self.titles = @[@"粘贴板分词(PIN 界面)",
                     @"网页文字选中bigbang(UC浏览器分词)",
-                    @"dfasl",@"dfas"];
+                    @"新闻详情评论页"];
 }
 
 - (void)viewDidLayoutSubviews{
@@ -67,6 +68,8 @@
         PUSHVC(GWebViewController);
     } else if (indexPath.row == 0) {
         PUSHVC(GPinHistoryViewController);
+    } else if (indexPath.row == 2) {
+        PUSHVC(GNewsDetailViewController);
     }
 }
 
