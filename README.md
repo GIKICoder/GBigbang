@@ -4,7 +4,7 @@
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/GIKICoder/GBigbang/blob/master/LICENSE)&nbsp;
 [![Support](https://img.shields.io/badge/support-iOS7+-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
-
+[![CocoaPods](http://img.shields.io/cocoapods/v/GBigbang.svg?style=flat)](http://cocoapods.org/pods/GBigbang)&nbsp;
 
 介绍
 ==============
@@ -18,7 +18,6 @@
 - 可自定义分词展现列表.
 - 分词列表支持滑动/点击选择.
 - 提供默认分词展现Container.
--
 
 用法
 ==============
@@ -51,6 +50,11 @@ self.flowView.flowDatas = layouts;
 ```
 安装
 ==============
+### CocoaPods
+
+1. Add `pod 'GBigbang'` to your Podfile.
+2. Run `pod install` or `pod update`.
+3. Import "GBigbang.h"
 
 ### 手动添加
 1. ` git clone  https://github.com/GIKICoder/GBigbang.git `
