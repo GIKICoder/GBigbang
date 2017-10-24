@@ -18,7 +18,6 @@
 - 可自定义分词展现列表.
 - 分词列表支持滑动/点击选择.
 - 提供默认分词展现Container.
--
 
 用法
 ==============
@@ -53,7 +52,7 @@ self.flowView.flowDatas = layouts;
 ==============
 ### CocoaPods
 
-1. Add `pod 'GMenuController'` to your Podfile.
+1. Add `pod 'GBigbang'` to your Podfile.
 2. Run `pod install` or `pod update`.
 3. Import "GBigbang.h"
 
