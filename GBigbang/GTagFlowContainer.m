@@ -169,6 +169,7 @@
     NSArray * array = [self.flowView filterAllSelectTitles];
     if (array.count>0) {
         [self.flowView.flowDatas makeObjectsPerformSelector:@selector(setIsSelected:) withObject:@(NO)];
+        self.topContentView.hidden = YES;
         [self.flowView reloadDatas];
     } else {
         [self hide];
@@ -196,8 +197,10 @@
 
 - (void)copyText:(NSString*)text
 {
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    [pasteboard setString:text];
+    if (text.length>0 ) {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        [pasteboard setString:text];
+    }
 }
 
 - (void)addToKeyWindow
