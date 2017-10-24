@@ -22,6 +22,7 @@
 @property (nonatomic, assign) CGFloat  cornerRadius;
 
 @property (nonatomic, assign) CGFloat itemHeight;
+
 @end
 
 @interface GTagFlowLayout : NSObject
