@@ -81,6 +81,7 @@
 		2B7D99F61F99EA50001A04CB /* GTagFlowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTagFlowView.m; sourceTree = "<group>"; };
 		2B7D99FB1F99EC52001A04CB /* GTagFlowContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTagFlowContainer.h; sourceTree = "<group>"; };
 		2B7D99FC1F99EC52001A04CB /* GTagFlowContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTagFlowContainer.m; sourceTree = "<group>"; };
+		2BCAF8F71F9EE1F20053C453 /* GBigbang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBigbang.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +177,7 @@
 		2B7D99EC1F99EA50001A04CB /* GBigbang */ = {
 			isa = PBXGroup;
 			children = (
+				2BCAF8F71F9EE1F20053C453 /* GBigbang.h */,
 				2B7D99ED1F99EA50001A04CB /* GBigbangBox.h */,
 				2B7D99EE1F99EA50001A04CB /* GBigbangBox.m */,
 				2B7D99F11F99EA50001A04CB /* GTagFlowCell.h */,
