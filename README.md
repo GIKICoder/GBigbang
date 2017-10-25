@@ -1,5 +1,5 @@
 # GBigbang
-大爆炸/分词/tagFlowView
+大爆炸/分词/TagFlowView
 ==============
 
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/GIKICoder/GBigbang/blob/master/LICENSE)&nbsp;
