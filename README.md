@@ -9,7 +9,7 @@
 介绍
 ==============
 这是一个分词组件.用与文本分词,列表展示.参考Pin的分词界面.和UC的bigbang界面.
-(该项目是 [GRichLabel](https://github.com/GIKICoder/GRichLabel) 文本选择复制功能的组件之一)
+(该项目是 [GRichLabel](https://github.com/GIKICoder/GRichLabel) 文本选择复制功能的组件之一).欢迎大家star!
 
 
 特性
