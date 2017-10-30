@@ -99,7 +99,6 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
         [flowCell configFlowLayout:layout];
     }
     if (indexPath.item == self.flowDatas.count -1) {
-        NSLog(@"collectionView.contentSize%f",self.collectionView.contentSize.height);
         if (!CGSizeEqualToSize(self.bounds.size, self.collectionView.contentSize)) {
             if (self.heightChangedBlock) {
                 self.heightChangedBlock(self.bounds.size.height, self.collectionView.contentSize.height);

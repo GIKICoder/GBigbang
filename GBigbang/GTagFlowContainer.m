@@ -180,7 +180,6 @@
 {
     [self hide];
     NSString * text = [self.flowView getNewTextstring];
-    NSLog(@"%@",text);
     if ([btn.titleLabel.text isEqualToString:@"复制"]) {
         [self copyText:text];
     } else if ([btn.titleLabel.text isEqualToString:@"翻译"]) {
