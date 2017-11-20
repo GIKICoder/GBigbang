@@ -69,3 +69,4 @@ Demo
 <img src="https://github.com/GIKICoder/GBigbang/blob/master/snapshot/bigbangDemo2.gif" width="320">
 <img src="https://github.com/GIKICoder/GBigbang/blob/master/snapshot/demo3.png" width="320">
 <img src="https://github.com/GIKICoder/GBigbang/blob/master/snapshot/demo4.png" width="320">
+
