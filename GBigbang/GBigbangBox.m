@@ -38,11 +38,13 @@
         
         if (subStringRange.length<enclosingRange.length && subStringRange.location == enclosingRange.location) {
             NSRange subRan = NSMakeRange(subStringRange.location+subStringRange.length, enclosingRange.length-subStringRange.length);
-            NSString *subStr = [string substringWithRange:subRan];
-            if (subStr.length > 0) {
-                [subStr enumerateSubstringsInRange:NSMakeRange(0, subStr.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString * _Nullable substring3, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
-                    [array addObject:[GBigbangItem bigbangText:substring3 isSymbol:YES]];
-                }];
+            if (string.length < subRan.location+subRan.length) {
+                NSString *subStr = [string substringWithRange:subRan];
+                if (subStr.length > 0) {
+                    [subStr enumerateSubstringsInRange:NSMakeRange(0, subStr.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString * _Nullable substring3, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
+                        [array addObject:[GBigbangItem bigbangText:substring3 isSymbol:YES]];
+                    }];
+                }
             }
         }
     }];
