@@ -157,9 +157,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
         if (self.selectedChangedBlock) {
             self.selectedChangedBlock(self.selectItems.count>0);
         }
-        [self.collectionView performBatchUpdates:^{
-            [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
-        } completion:nil];
+         [self performReload:@[indexPath]];
     }
 }
 
