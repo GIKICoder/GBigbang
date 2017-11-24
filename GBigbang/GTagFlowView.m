@@ -39,7 +39,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
         self.lineSpacing = 10;
         self.interitemSpacing = 4;
         self.supportSlideSelection = YES;
-        self.edgeInsets =UIEdgeInsetsMake(0, 0, 0, 0);
+        self.edgeInsets =UIEdgeInsetsMake(0, 10, 0, 10);
         
         self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:[UICollectionViewFlowLayout new]];
         
