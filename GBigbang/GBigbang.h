@@ -9,7 +9,7 @@
 #ifndef GBigbang_h
 #define GBigbang_h
 #import "GBigbangBox.h"
-#import "GTagFlowLayout.h"
+#import "GTagFlowItem.h"
 #import "GTagFlowView.h"
 #import "GTagFlowContainer.h"
 #endif /* GBigbang_h */

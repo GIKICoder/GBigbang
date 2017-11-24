@@ -23,7 +23,7 @@
 		2B7D99EB1F99E720001A04CB /* GWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99EA1F99E720001A04CB /* GWebViewController.m */; };
 		2B7D99F71F99EA54001A04CB /* GBigbangBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99EE1F99EA50001A04CB /* GBigbangBox.m */; };
 		2B7D99F81F99EA63001A04CB /* GTagFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99F21F99EA50001A04CB /* GTagFlowCell.m */; };
-		2B7D99F91F99EA66001A04CB /* GTagFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99F41F99EA50001A04CB /* GTagFlowLayout.m */; };
+		2B7D99F91F99EA66001A04CB /* GTagFlowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99F41F99EA50001A04CB /* GTagFlowItem.m */; };
 		2B7D99FA1F99EA69001A04CB /* GTagFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99F61F99EA50001A04CB /* GTagFlowView.m */; };
 		2B7D99FD1F99EC52001A04CB /* GTagFlowContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99FC1F99EC52001A04CB /* GTagFlowContainer.m */; };
 /* End PBXBuildFile section */
@@ -78,8 +78,8 @@
 		2B7D99EE1F99EA50001A04CB /* GBigbangBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBigbangBox.m; sourceTree = "<group>"; };
 		2B7D99F11F99EA50001A04CB /* GTagFlowCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTagFlowCell.h; sourceTree = "<group>"; };
 		2B7D99F21F99EA50001A04CB /* GTagFlowCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTagFlowCell.m; sourceTree = "<group>"; };
-		2B7D99F31F99EA50001A04CB /* GTagFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTagFlowLayout.h; sourceTree = "<group>"; };
-		2B7D99F41F99EA50001A04CB /* GTagFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTagFlowLayout.m; sourceTree = "<group>"; };
+		2B7D99F31F99EA50001A04CB /* GTagFlowItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTagFlowItem.h; sourceTree = "<group>"; };
+		2B7D99F41F99EA50001A04CB /* GTagFlowItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTagFlowItem.m; sourceTree = "<group>"; };
 		2B7D99F51F99EA50001A04CB /* GTagFlowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTagFlowView.h; sourceTree = "<group>"; };
 		2B7D99F61F99EA50001A04CB /* GTagFlowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTagFlowView.m; sourceTree = "<group>"; };
 		2B7D99FB1F99EC52001A04CB /* GTagFlowContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTagFlowContainer.h; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 				2B7D99F21F99EA50001A04CB /* GTagFlowCell.m */,
 				2B546D4F1FC6D54300A235BB /* GTagCollectionViewLayout.h */,
 				2B546D501FC6D54300A235BB /* GTagCollectionViewLayout.m */,
-				2B7D99F31F99EA50001A04CB /* GTagFlowLayout.h */,
-				2B7D99F41F99EA50001A04CB /* GTagFlowLayout.m */,
+				2B7D99F31F99EA50001A04CB /* GTagFlowItem.h */,
+				2B7D99F41F99EA50001A04CB /* GTagFlowItem.m */,
 				2B7D99F51F99EA50001A04CB /* GTagFlowView.h */,
 				2B7D99F61F99EA50001A04CB /* GTagFlowView.m */,
 				2B7D99FB1F99EC52001A04CB /* GTagFlowContainer.h */,
@@ -336,7 +336,7 @@
 				2B7D99F71F99EA54001A04CB /* GBigbangBox.m in Sources */,
 				2B7D99F81F99EA63001A04CB /* GTagFlowCell.m in Sources */,
 				2B7D99C71F99E389001A04CB /* main.m in Sources */,
-				2B7D99F91F99EA66001A04CB /* GTagFlowLayout.m in Sources */,
+				2B7D99F91F99EA66001A04CB /* GTagFlowItem.m in Sources */,
 				2B7D99B91F99E389001A04CB /* AppDelegate.m in Sources */,
 				2B7D99EB1F99E720001A04CB /* GWebViewController.m in Sources */,
 				2B2A552C1F9DFBAD007F5CCF /* GNewsDetailViewController.m in Sources */,

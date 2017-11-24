@@ -21,7 +21,7 @@ typedef void(^GTagFlowActionBlock) (NSString *actionTitle,NSString*newText);
 
 @property (nonatomic, strong,readonly) GTagFlowView * flowView;
 
-- (void)configDatas:(NSArray<GTagFlowLayout*>*)flowDatas;
+- (void)configDatas:(NSArray<GTagFlowItem*>*)flowDatas;
 - (void)show;
 - (void)hide;
 @end

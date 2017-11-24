@@ -1,5 +1,5 @@
 //
-//  GTagFlowLayout.h
+//  GTagFlowItem.h
 //  GBigbangExample
 //
 //  Created by GIKI on 2017/10/13.
@@ -25,7 +25,7 @@
 
 @end
 
-@interface GTagFlowLayout : NSObject
+@interface GTagFlowItem : NSObject
 
 @property (nonatomic, strong) NSString * text;
 
@@ -41,8 +41,8 @@
  @param text <#text description#>
  @return <#return value description#>
  */
-+ (instancetype)tagFlowLayoutWithText:(NSString*)text;
-+ (instancetype)tagFlowLayoutWithText:(NSString*)text withAppearance:(GTagFlowAppearance*)appearance;
++ (instancetype)tagFlowItemWithText:(NSString*)text;
++ (instancetype)tagFlowItemWithText:(NSString*)text withAppearance:(GTagFlowAppearance*)appearance;
 
 /**
  factory Method
@@ -51,6 +51,6 @@
  @param appearance <#appearance description#>
  @return <#return value description#>
  */
-+ (NSArray<GTagFlowLayout*>*)factoryFolwLayoutWithItems:(NSArray<GBigbangItem*>*)items withAppearance:(GTagFlowAppearance*)appearance;
++ (NSArray<GTagFlowItem*>*)factoryFolwLayoutWithItems:(NSArray<GBigbangItem*>*)items withAppearance:(GTagFlowAppearance*)appearance;
 
 @end

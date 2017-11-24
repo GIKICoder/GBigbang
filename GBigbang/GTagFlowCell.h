@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@class GTagFlowLayout;
+@class GTagFlowItem;
 @interface GTagFlowCell : UICollectionViewCell
 
-- (void)configFlowLayout:(GTagFlowLayout*)flowLayout;
+- (void)configFlowLayout:(GTagFlowItem*)flowLayout;
 
 @end

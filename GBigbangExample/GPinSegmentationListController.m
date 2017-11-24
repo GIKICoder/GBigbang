@@ -39,7 +39,7 @@
     
     NSArray *items = [GBigbangBox bigBang:self.string];
     
-    NSArray * layouts = [GTagFlowLayout factoryFolwLayoutWithItems:items withAppearance:self.appearance];
+    NSArray * layouts = [GTagFlowItem factoryFolwLayoutWithItems:items withAppearance:self.appearance];
     self.flowView.flowDatas = layouts;
     [self.flowView reloadDatas];
     

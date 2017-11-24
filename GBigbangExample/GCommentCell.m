@@ -129,7 +129,7 @@ typedef void(^GLabelBigBang) (NSString *text);
 {
     NSArray *items = [GBigbangBox bigBang:text];
     
-    NSArray * layouts = [GTagFlowLayout factoryFolwLayoutWithItems:items withAppearance:nil];
+    NSArray * layouts = [GTagFlowItem factoryFolwLayoutWithItems:items withAppearance:nil];
     [self.container configDatas:layouts];
     [self.container show];
 }

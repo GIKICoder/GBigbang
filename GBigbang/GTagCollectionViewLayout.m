@@ -7,7 +7,7 @@
 //
 
 #import "GTagCollectionViewLayout.h"
-#import "GTagFlowLayout.h"
+#import "GTagFlowItem.h"
 
 @interface UICollectionViewLayoutAttributes (GTagFlow)
 

@@ -58,7 +58,7 @@
     NSArray * array = [GBigbangBox bigBang:selection];
     __block NSMutableArray *flows = [NSMutableArray array];
     [array enumerateObjectsUsingBlock:^(GBigbangItem  * obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        GTagFlowLayout *layout = [GTagFlowLayout tagFlowLayoutWithText:obj.text];
+        GTagFlowItem *layout = [GTagFlowItem tagFlowItemWithText:obj.text];
         [flows addObject:layout];
         if (obj.isSymbolOrEmoji) {
             layout.appearance.backgroundColor = [UIColor grayColor];

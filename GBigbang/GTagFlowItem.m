@@ -1,5 +1,5 @@
 //
-//  GTagFlowLayout.m
+//  GTagFlowItem.m
 //  GBigbangExample
 //
 //  Created by GIKI on 2017/10/13.
@@ -8,7 +8,7 @@
 
 #define GTagColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
-#import "GTagFlowLayout.h"
+#import "GTagFlowItem.h"
 
 @implementation GTagFlowAppearance
 - (instancetype)init
@@ -33,18 +33,18 @@
 }
 @end
 
-@implementation GTagFlowLayout
+@implementation GTagFlowItem
 
-+ (instancetype)tagFlowLayoutWithText:(NSString*)text
++ (instancetype)tagFlowItemWithText:(NSString*)text
 {
-    GTagFlowLayout *flow = [[GTagFlowLayout alloc] init];
+    GTagFlowItem *flow = [[GTagFlowItem alloc] init];
     flow.text = text;
     return flow;
 }
 
-+ (instancetype)tagFlowLayoutWithText:(NSString *)text withAppearance:(GTagFlowAppearance *)appearance
++ (instancetype)tagFlowItemWithText:(NSString *)text withAppearance:(GTagFlowAppearance *)appearance
 {
-    GTagFlowLayout *flow = [[GTagFlowLayout alloc] init];
+    GTagFlowItem *flow = [[GTagFlowItem alloc] init];
     flow.text = text;
     flow.appearance = appearance;
     return flow;
@@ -92,11 +92,11 @@
     self.itemSize = size;
 }
 
-+ (NSArray<GTagFlowLayout*>*)factoryFolwLayoutWithItems:(NSArray<GBigbangItem*>*)items withAppearance:(GTagFlowAppearance*)appearance;
++ (NSArray<GTagFlowItem*>*)factoryFolwLayoutWithItems:(NSArray<GBigbangItem*>*)items withAppearance:(GTagFlowAppearance*)appearance;
 {
     __block NSMutableArray * arrayM = [NSMutableArray arrayWithCapacity:items.count];
     [items enumerateObjectsUsingBlock:^(GBigbangItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        GTagFlowLayout *layout = [GTagFlowLayout tagFlowLayoutWithText:obj.text withAppearance:appearance];
+        GTagFlowItem *layout = [GTagFlowItem tagFlowItemWithText:obj.text withAppearance:appearance];
         [arrayM addObject:layout];
     }];
     return arrayM.copy;

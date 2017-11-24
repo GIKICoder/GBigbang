@@ -7,7 +7,7 @@
 //
 
 #import "GTagFlowCell.h"
-#import "GTagFlowLayout.h"
+#import "GTagFlowItem.h"
 
 @interface GTagFlowCell()
 @property (nonatomic, strong) UILabel * tagLabel;
@@ -39,7 +39,7 @@
     self.tagLabel.frame = self.bounds;
 }
 
-- (void)configFlowLayout:(GTagFlowLayout*)flowLayout
+- (void)configFlowLayout:(GTagFlowItem*)flowLayout
 {
     if (flowLayout.isSelected) {
         if (flowLayout.appearance.selectTextColor) {

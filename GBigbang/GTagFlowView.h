@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GTagFlowLayout.h"
+#import "GTagFlowItem.h"
 
 typedef void(^GTagFlowViewHeightChanged) (CGFloat original,CGFloat newHeight);
 typedef void(^GTagFlowViewSelectedChanged) (BOOL hasSelected);
@@ -28,7 +28,7 @@ typedef void(^GTagFlowViewSelectedChanged) (BOOL hasSelected);
 @property (nonatomic, assign) BOOL  supportSlideSelection;
 
 /// 分词数组
-@property (nonatomic, strong ) NSArray<GTagFlowLayout*> * flowDatas;
+@property (nonatomic, strong ) NSArray<GTagFlowItem*> * flowDatas;
 
 /// collectionView 高度改变回调
 @property (nonatomic, copy  ) GTagFlowViewHeightChanged  heightChangedBlock;
