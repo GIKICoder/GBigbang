@@ -60,7 +60,9 @@ self.flowView.flowDatas = layouts;
 1. ` git clone  https://github.com/GIKICoder/GBigbang.git `
 2. 选择`GBigbang`文件夹.拖入项目中即可.
 
-
+更新
+==============
+- 2017/11/24 : 增加自定义布局Layout. bigbang列表可使用自定义布局. 实现固定间距列表.
 Demo
 ==============
 ### Demo
