@@ -9,7 +9,9 @@
 #define ScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
 #import "GTagFlowContainer.h"
+#import "GTagCollectionViewLayout.h"
 @interface GTagFlowContainer ()
+@property (nonatomic, assign) BOOL useCustomLayout;
 @property (nonatomic, strong) UIView *menuBackgroundView;
 @property (nonatomic, strong,readwrite) GTagFlowView * flowView;
 @property (nonatomic, strong) UIView * topContentView;
@@ -18,6 +20,7 @@
 @end
 
 @implementation GTagFlowContainer
+
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {

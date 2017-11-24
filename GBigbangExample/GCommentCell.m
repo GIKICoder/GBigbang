@@ -106,6 +106,7 @@ typedef void(^GLabelBigBang) (NSString *text);
         })];
         GTagFlowContainer *container = [GTagFlowContainer new];
         self.container = container;
+        [self.container.flowView configTagCollectionViewLayout];
         self.container.actionBtnItems = @[@"复制",@"举报",@"错别字"];
 //        __weak typeof(self) weakSelf = self;
         self.container.actionBlock = ^(NSString *actionTitle, NSString *newText) {

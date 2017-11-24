@@ -8,6 +8,7 @@
 
 #import "GTagFlowView.h"
 #import "GTagFlowCell.h"
+#import "GTagCollectionViewLayout.h"
 
 typedef NS_ENUM(NSUInteger, GRecognizerState) {
     GRecognizerStateNone,
@@ -15,7 +16,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
     GRecognizerStateRight,
 };
 
-@interface GTagFlowView()<UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource>
+@interface GTagFlowView()<UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,UICollectionViewDataSource,GTagLayoutDataProtocol>
 
 @property (nonatomic, strong) UIPanGestureRecognizer * panRecognizer;
 @property (nonatomic, strong) NSMutableArray * indexPaths;
@@ -38,7 +39,8 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
         self.lineSpacing = 10;
         self.interitemSpacing = 4;
         self.supportSlideSelection = YES;
-        self.edgeInsets =UIEdgeInsetsMake(0, 10, 0, 10);
+        self.edgeInsets =UIEdgeInsetsMake(0, 0, 0, 0);
+        
         self.collectionView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:[UICollectionViewFlowLayout new]];
         
         self.collectionView.dataSource = self;
@@ -59,6 +61,19 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
     self.collectionView.frame = self.bounds;
 }
 
+- (void)configTagCollectionViewLayout
+{
+    GTagCollectionViewLayout *layout = [GTagCollectionViewLayout new];
+    layout.delegate = self;
+    [self configCustomLayout:layout];
+}
+
+- (void)configCustomLayout:(__kindof UICollectionViewLayout*)customLayout
+{
+    if (!customLayout) return;
+    self.collectionView.collectionViewLayout = customLayout;
+}
+
 - (void)setSupportSlideSelection:(BOOL)supportSlideSelection
 {
     _supportSlideSelection = supportSlideSelection;
@@ -77,6 +92,26 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
 - (void)reloadDatas
 {
     [self.collectionView reloadData];
+}
+
+- (void)performReload:(NSArray*)indexpaths {
+    //刷新界面
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    [UIView performWithoutAnimation:^{
+        //刷新界面
+        //        [self.collectionView reloadData];
+        [self.collectionView performBatchUpdates:^{
+            [self.collectionView reloadItemsAtIndexPaths:indexpaths];
+        } completion:^(BOOL finished) {
+        }];
+    }];
+    [CATransaction commit];
+}
+
+- (CGFloat)maxWidthOfLine_BookBangCollectionViewLayout
+{
+    return self.frame.size.width;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -171,12 +206,9 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
             GTagFlowLayout *layout = [self.flowDatas objectAtIndex:self.beginIndexPath.item];
             layout.isSelected = self.beginSelectState;
             
-             [self addSelectLayout:layout];
+            [self addSelectLayout:layout];
             
-            [self.collectionView performBatchUpdates:^{
-                [self.collectionView reloadItemsAtIndexPaths:@[self.beginIndexPath]];
-            } completion:^(BOOL finished) {
-            }];
+            [self performReload:@[self.beginIndexPath]];
             self.lastIndexPath = self.beginIndexPath;
             return;
         }
@@ -184,7 +216,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
     } else if (recognizer.state == UIGestureRecognizerStateChanged ) {
         
         NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:point];
- 
+        
         if (!self.beginIndexPath) {
             self.beginIndexPath = indexPath;
             GTagFlowLayout *layout = [self.flowDatas objectAtIndex:self.beginIndexPath.item];
@@ -198,10 +230,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
                 
                 [self addSelectLayout:layout];
                 
-                [self.collectionView performBatchUpdates:^{
-                    [self.collectionView reloadItemsAtIndexPaths:@[self.beginIndexPath]];
-                } completion:^(BOOL finished) {
-                }];
+                [self performReload:@[self.beginIndexPath]];
                 self.lastIndexPath = indexPath;
                 return;
             }
@@ -211,17 +240,17 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
         if (!indexPath) return;
         if (self.lastIndexPath.item == indexPath.item) return;
         self.lastIndexPath = indexPath;
-
+        
         if (self.beginIndexPath.item < indexPath.item) {
             self.recognizerState = GRecognizerStateRight;
         } else {
-             self.recognizerState = GRecognizerStateLeft;
+            self.recognizerState = GRecognizerStateLeft;
         }
         if (self.lastRecognizerState == GRecognizerStateNone) {
             self.lastRecognizerState = self.recognizerState;
         }
         if (self.lastRecognizerState != self.recognizerState) {
-             self.lastRecognizerState = self.recognizerState;
+            self.lastRecognizerState = self.recognizerState;
             if (![self.indexPaths containsObject:self.beginIndexPath]) {
                 [self.indexPaths addObject:self.beginIndexPath];
                 GTagFlowLayout *layout = [self.flowDatas objectAtIndex:self.beginIndexPath.item];
@@ -261,7 +290,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
                 }
             }
         } else if(count == 1) {
-           
+            
             if (![self.indexPaths containsObject:indexPath]) {
                 [self.indexPaths addObject:indexPath];
                 GTagFlowLayout *layout = [self.flowDatas objectAtIndex:indexPath.item];
@@ -277,10 +306,8 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
         }
         self.beginIndexPath = indexPath;
         NSArray *array = self.indexPaths.copy;
-        [self.collectionView performBatchUpdates:^{
-            [self.collectionView reloadItemsAtIndexPaths:array];
-        } completion:^(BOOL finished) {
-        }];
+        
+        [self performReload:array];
     } else if (recognizer.state == UIGestureRecognizerStateEnded|| recognizer.state == UIGestureRecognizerStateCancelled ) {
         if (self.selectedChangedBlock) {
             self.selectedChangedBlock(self.selectItems.count >0);
@@ -321,7 +348,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
 - (NSArray *)filterAllSelectTitles
 {
     __block NSMutableArray * array = [NSMutableArray array];
-      NSArray * flowDatas = self.flowDatas.copy;
+    NSArray * flowDatas = self.flowDatas.copy;
     [flowDatas enumerateObjectsUsingBlock:^(GTagFlowLayout * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.isSelected) {
             [array addObject:obj.text];

@@ -27,7 +27,7 @@
     
     self.titles = @[@"粘贴板分词(PIN 界面)",
                     @"网页文字选中bigbang(UC浏览器分词)",
-                    @"新闻详情评论页"];
+                    @"新闻详情评论页(自定义流水布局-等间距)"];
 }
 
 - (void)viewDidLayoutSubviews{

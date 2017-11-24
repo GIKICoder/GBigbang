@@ -39,6 +39,19 @@ typedef void(^GTagFlowViewSelectedChanged) (BOOL hasSelected);
 - (void)reloadDatas;
 
 /**
+ 配置使用左边对齐的流水布局
+ @brief:GTagCollectionView
+ */
+- (void)configTagCollectionViewLayout;
+
+/**
+ 使用自定义流水布局
+
+ @param customLayout 传入自定义布局
+ */
+- (void)configCustomLayout:(__kindof UICollectionViewLayout*)customLayout;
+
+/**
  获取选择词/数组
 
  @param addingOrder 是否按照选择词顺序生成新词

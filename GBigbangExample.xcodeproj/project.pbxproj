@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B2A552C1F9DFBAD007F5CCF /* GNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A552B1F9DFBAD007F5CCF /* GNewsDetailViewController.m */; };
 		2B2A552F1F9E0B84007F5CCF /* GCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A552E1F9E0B84007F5CCF /* GCommentCell.m */; };
+		2B546D511FC6D54300A235BB /* GTagCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B546D501FC6D54300A235BB /* GTagCollectionViewLayout.m */; };
 		2B772D161F9D9D4A00AB4A82 /* GPinSegmentationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B772D151F9D9D4A00AB4A82 /* GPinSegmentationListController.m */; };
 		2B772D191F9DA32400AB4A82 /* GPinHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B772D181F9DA32400AB4A82 /* GPinHistoryViewController.m */; };
 		2B7D99B91F99E389001A04CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99B81F99E389001A04CB /* AppDelegate.m */; };
@@ -49,6 +50,8 @@
 		2B2A552B1F9DFBAD007F5CCF /* GNewsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNewsDetailViewController.m; sourceTree = "<group>"; };
 		2B2A552D1F9E0B84007F5CCF /* GCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCommentCell.h; sourceTree = "<group>"; };
 		2B2A552E1F9E0B84007F5CCF /* GCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCommentCell.m; sourceTree = "<group>"; };
+		2B546D4F1FC6D54300A235BB /* GTagCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTagCollectionViewLayout.h; sourceTree = "<group>"; };
+		2B546D501FC6D54300A235BB /* GTagCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTagCollectionViewLayout.m; sourceTree = "<group>"; };
 		2B772D141F9D9D4A00AB4A82 /* GPinSegmentationListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPinSegmentationListController.h; sourceTree = "<group>"; };
 		2B772D151F9D9D4A00AB4A82 /* GPinSegmentationListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPinSegmentationListController.m; sourceTree = "<group>"; };
 		2B772D171F9DA32400AB4A82 /* GPinHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPinHistoryViewController.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				2B7D99EE1F99EA50001A04CB /* GBigbangBox.m */,
 				2B7D99F11F99EA50001A04CB /* GTagFlowCell.h */,
 				2B7D99F21F99EA50001A04CB /* GTagFlowCell.m */,
+				2B546D4F1FC6D54300A235BB /* GTagCollectionViewLayout.h */,
+				2B546D501FC6D54300A235BB /* GTagCollectionViewLayout.m */,
 				2B7D99F31F99EA50001A04CB /* GTagFlowLayout.h */,
 				2B7D99F41F99EA50001A04CB /* GTagFlowLayout.m */,
 				2B7D99F51F99EA50001A04CB /* GTagFlowView.h */,
@@ -338,6 +343,7 @@
 				2B7D99FD1F99EC52001A04CB /* GTagFlowContainer.m in Sources */,
 				2B772D161F9D9D4A00AB4A82 /* GPinSegmentationListController.m in Sources */,
 				2B7D99FA1F99EA69001A04CB /* GTagFlowView.m in Sources */,
+				2B546D511FC6D54300A235BB /* GTagCollectionViewLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +509,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RCF9CM736N;
 				INFOPLIST_FILE = GBigbangExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GIKI.GBigbangExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -517,6 +524,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RCF9CM736N;
 				INFOPLIST_FILE = GBigbangExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GIKI.GBigbangExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
