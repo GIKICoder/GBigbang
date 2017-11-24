@@ -63,6 +63,7 @@ self.flowView.flowDatas = layouts;
 更新
 ==============
 - 2017/11/24 : 增加自定义布局Layout. bigbang列表可使用自定义布局. 实现固定间距列表.
+
 Demo
 ==============
 ### Demo
