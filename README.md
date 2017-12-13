@@ -25,28 +25,30 @@
 ### 基本用法
 ```objc
 
-NSString* selection = [self stringByEvaluatingJavaScriptFromString:@"window.getSelection().toString()"];
-NSArray * array = [GBigbangBox bigBang:selection];
-__block NSMutableArray *flows = [NSMutableArray array];
-[array enumerateObjectsUsingBlock:^(GBigbangItem  * obj, NSUInteger idx, BOOL * _Nonnull stop) {
-GTagFlowLayout *layout = [GTagFlowLayout tagFlowLayoutWithText:obj.text];
-[flows addObject:layout];
-if (obj.isSymbolOrEmoji) {
-    layout.appearance.backgroundColor = [UIColor grayColor];
-    layout.appearance.textColor = [UIColor blackColor];
+-(void)bigbang:(NSString*)selection
+{
+    NSArray * array = [GBigbangBox bigBang:selection];
+    __block NSMutableArray *flows = [NSMutableArray array];
+    [array enumerateObjectsUsingBlock:^(GBigbangItem  * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    GTagFlowItem *layout = [GTagFlowItem tagFlowItemWithText:obj.text];
+        [flows addObject:layout];
+        if (obj.isSymbolOrEmoji) {
+            layout.appearance.backgroundColor = [UIColor grayColor];
+            layout.appearance.textColor = [UIColor blackColor];
+        }
+    }];
+    [self.container configDatas:flows.copy];
+    [self.container show];
 }
-}];
-[self.container configDatas:flows.copy];
-[self.container show];
 
 ```
 
 ```objc
-NSArray *items = [GBigbangBox bigBang:self.string];
+    NSArray *items = [GBigbangBox bigBang:self.string];
 
-NSArray * layouts = [GTagFlowLayout factoryFolwLayoutWithItems:items withAppearance:self.appearance];
-self.flowView.flowDatas = layouts;
-[self.flowView reloadDatas];
+    NSArray * layouts = [GTagFlowLayout factoryFolwLayoutWithItems:items withAppearance:self.appearance];
+    self.flowView.flowDatas = layouts;
+    [self.flowView reloadDatas];
 ```
 安装
 ==============
