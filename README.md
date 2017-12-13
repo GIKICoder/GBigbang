@@ -44,9 +44,18 @@
 ```
 
 ```objc
+    self.appearance = [GTagFlowAppearance new];
+    self.appearance.borderColor = [UIColor blackColor];
+    self.appearance.textColor = [UIColor blackColor];
+    self.appearance.borderWidth = 1;
+    self.appearance.backgroundColor = [UIColor whiteColor];
+    self.appearance.selectTextColor = [UIColor redColor];
+    self.appearance.selectBorderColor = [UIColor redColor];
+    self.appearance.selectBackgroundColor = [UIColor whiteColor];
+
     NSArray *items = [GBigbangBox bigBang:self.string];
 
-    NSArray * layouts = [GTagFlowLayout factoryFolwLayoutWithItems:items withAppearance:self.appearance];
+    NSArray * layouts = [GTagFlowItem factoryFolwLayoutWithItems:items withAppearance:self.appearance];
     self.flowView.flowDatas = layouts;
     [self.flowView reloadDatas];
 ```
