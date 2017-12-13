@@ -22,7 +22,7 @@
 用法
 ==============
 
-### 基本用法
+###  区分标点符号与表情
 ```objc
 
 -(void)bigbang:(NSString*)selection
@@ -42,7 +42,7 @@
 }
 
 ```
-
+###  自定义分词展示列表样式
 ```objc
     self.appearance = [GTagFlowAppearance new];
     self.appearance.borderColor = [UIColor blackColor];
@@ -56,6 +56,21 @@
     NSArray *items = [GBigbangBox bigBang:self.string];
 
     NSArray * layouts = [GTagFlowItem factoryFolwLayoutWithItems:items withAppearance:self.appearance];
+    self.flowView.flowDatas = layouts;
+    [self.flowView reloadDatas];
+```
+###  分词列表 使用自定义流水布局
+```objc
+    GTagFlowContainer *container = [GTagFlowContainer new];
+    self.container = container;
+    /// 使用自定义流水布局
+    [self.container.flowView configTagCollectionViewLayout];
+    self.container.actionBtnItems = @[@"复制",@"举报",@"错别字"];
+    self.container.actionBlock = ^(NSString *actionTitle, NSString *newText) {
+        NSLog(@"点击了 -- %@, 选择的文字 -- %@",actionTitle,newText);
+    };
+    
+    NSArray * layouts = [GTagFlowItem factoryFolwLayoutWithItems:items withAppearance:nil];
     self.flowView.flowDatas = layouts;
     [self.flowView reloadDatas];
 ```
