@@ -1,6 +1,6 @@
 //
 //  GBigbang.h
-//  GBigbangExample
+//  GBigbang
 //
 //  Created by GIKI on 2017/10/24.
 //  Copyright © 2017年 GIKI. All rights reserved.

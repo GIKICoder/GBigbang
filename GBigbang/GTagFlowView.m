@@ -1,6 +1,6 @@
 //
 //  GTagFlowView.m
-//  GBigbangExample
+//  GBigbang
 //
 //  Created by GIKI on 2017/10/13.
 //  Copyright © 2017年 GIKI. All rights reserved.
@@ -9,7 +9,7 @@
 #import "GTagFlowView.h"
 #import "GTagFlowCell.h"
 #import "GTagCollectionViewLayout.h"
-
+#import "NSArray+GBigbang.h"
 typedef NS_ENUM(NSUInteger, GRecognizerState) {
     GRecognizerStateNone,
     GRecognizerStateLeft,
@@ -130,7 +130,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
     
     GTagFlowCell *flowCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"GTagFlowCell" forIndexPath:indexPath];
     if (indexPath.item < self.flowDatas.count){
-        GTagFlowItem *layout = [self.flowDatas objectAtIndex:indexPath.item];
+        GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:indexPath.item];
         [flowCell configFlowLayout:layout];
     }
     if (indexPath.item == self.flowDatas.count -1) {
@@ -149,7 +149,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
 {
     if (indexPath.item < self.flowDatas.count){
         
-        GTagFlowItem *layout = [self.flowDatas objectAtIndex:indexPath.item];
+        GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:indexPath.item];
         layout.isSelected = !layout.isSelected;
         
         [self addSelectLayout:layout];
@@ -167,7 +167,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
 {
     if (indexPath.item >= self.flowDatas.count) return CGSizeZero;
     
-    GTagFlowItem *layout = [self.flowDatas objectAtIndex:indexPath.item];
+    GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:indexPath.item];
     return layout.itemSize;
 }
 
@@ -197,11 +197,11 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
         self.beginIndexPath = [self.collectionView indexPathForItemAtPoint:point];
         if (self.beginIndexPath.item >= self.flowDatas.count) return;
         if (!self.beginIndexPath) return;
-        GTagFlowItem *layout = [self.flowDatas objectAtIndex:self.beginIndexPath.item];
+        GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:self.beginIndexPath.item];
         self.beginSelectState = !layout.isSelected;
         if (![self.indexPaths containsObject:self.beginIndexPath]) {
-            [self.indexPaths addObject:self.beginIndexPath];
-            GTagFlowItem *layout = [self.flowDatas objectAtIndex:self.beginIndexPath.item];
+            [self.indexPaths addObjectSafely:self.beginIndexPath];
+            GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:self.beginIndexPath.item];
             layout.isSelected = self.beginSelectState;
             
             [self addSelectLayout:layout];
@@ -217,13 +217,13 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
         
         if (!self.beginIndexPath) {
             self.beginIndexPath = indexPath;
-            GTagFlowItem *layout = [self.flowDatas objectAtIndex:self.beginIndexPath.item];
+            GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:self.beginIndexPath.item];
             self.beginSelectState = !layout.isSelected;
             if (![self.indexPaths containsObject:self.beginIndexPath]) {
                 if (self.beginIndexPath.item >= self.flowDatas.count) return;
                 if (!self.beginIndexPath) return;
-                [self.indexPaths addObject:self.beginIndexPath];
-                GTagFlowItem *layout = [self.flowDatas objectAtIndex:self.beginIndexPath.item];
+                [self.indexPaths addObjectSafely:self.beginIndexPath];
+                GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:self.beginIndexPath.item];
                 layout.isSelected = self.beginSelectState;
                 
                 [self addSelectLayout:layout];
@@ -250,14 +250,14 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
         if (self.lastRecognizerState != self.recognizerState) {
             self.lastRecognizerState = self.recognizerState;
             if (![self.indexPaths containsObject:self.beginIndexPath]) {
-                [self.indexPaths addObject:self.beginIndexPath];
-                GTagFlowItem *layout = [self.flowDatas objectAtIndex:self.beginIndexPath.item];
+                [self.indexPaths addObjectSafely:self.beginIndexPath];
+                GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:self.beginIndexPath.item];
                 layout.isSelected = self.beginSelectState;
                 
                 [self addSelectLayout:layout];
                 
             } else {
-                GTagFlowItem *layout = [self.flowDatas objectAtIndex:self.beginIndexPath.item];
+                GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:self.beginIndexPath.item];
                 layout.isSelected = !layout.isSelected;
                 
                 [self addSelectLayout:layout];
@@ -274,14 +274,14 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
                 }
                 
                 if (![self.indexPaths containsObject:path]) {
-                    [self.indexPaths addObject:path];
-                    GTagFlowItem *layout = [self.flowDatas objectAtIndex:path.item];
+                    [self.indexPaths addObjectSafely:path];
+                    GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:path.item];
                     layout.isSelected = self.beginSelectState;
                     
                     [self addSelectLayout:layout];
                     
                 } else {
-                    GTagFlowItem *layout = [self.flowDatas objectAtIndex:path.item];
+                    GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:path.item];
                     layout.isSelected = !layout.isSelected;
                     
                     [self addSelectLayout:layout];
@@ -290,13 +290,13 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
         } else if(count == 1) {
             
             if (![self.indexPaths containsObject:indexPath]) {
-                [self.indexPaths addObject:indexPath];
-                GTagFlowItem *layout = [self.flowDatas objectAtIndex:indexPath.item];
+                [self.indexPaths addObjectSafely:indexPath];
+                GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:indexPath.item];
                 layout.isSelected = self.beginSelectState;
                 
                 [self addSelectLayout:layout];
             } else {
-                GTagFlowItem *layout = [self.flowDatas objectAtIndex:indexPath.item];
+                GTagFlowItem *layout = [self.flowDatas objectAtIndexSafely:indexPath.item];
                 layout.isSelected =!layout.isSelected;
                 
                 [self addSelectLayout:layout];
@@ -322,7 +322,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
 {
     if (layout.isSelected) {
         if (![self.selectItems containsObject:layout]) {
-            [self.selectItems addObject:layout];
+            [self.selectItems addObjectSafely:layout];
         }
     } else {
         if ([self.selectItems containsObject:layout]) {
@@ -349,7 +349,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
     NSArray * flowDatas = self.flowDatas.copy;
     [flowDatas enumerateObjectsUsingBlock:^(GTagFlowItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.isSelected) {
-            [array addObject:obj.text];
+            [array addObjectSafely:obj.text];
         }
     }];
     return array.copy;
@@ -389,7 +389,7 @@ typedef NS_ENUM(NSUInteger, GRecognizerState) {
     }
     [flowDatas enumerateObjectsUsingBlock:^(GTagFlowItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (!obj.isSelected) {
-            [array addObject:obj.text];
+            [array addObjectSafely:obj.text];
         }
     }];
     return array.copy;

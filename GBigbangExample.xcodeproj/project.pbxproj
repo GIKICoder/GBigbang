@@ -10,6 +10,7 @@
 		2B2A552C1F9DFBAD007F5CCF /* GNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A552B1F9DFBAD007F5CCF /* GNewsDetailViewController.m */; };
 		2B2A552F1F9E0B84007F5CCF /* GCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B2A552E1F9E0B84007F5CCF /* GCommentCell.m */; };
 		2B546D511FC6D54300A235BB /* GTagCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B546D501FC6D54300A235BB /* GTagCollectionViewLayout.m */; };
+		2B71C48C2028319600A98235 /* NSArray+GBigbang.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B71C48B2028319600A98235 /* NSArray+GBigbang.m */; };
 		2B772D161F9D9D4A00AB4A82 /* GPinSegmentationListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B772D151F9D9D4A00AB4A82 /* GPinSegmentationListController.m */; };
 		2B772D191F9DA32400AB4A82 /* GPinHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B772D181F9DA32400AB4A82 /* GPinHistoryViewController.m */; };
 		2B7D99B91F99E389001A04CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99B81F99E389001A04CB /* AppDelegate.m */; };
@@ -52,6 +53,8 @@
 		2B2A552E1F9E0B84007F5CCF /* GCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCommentCell.m; sourceTree = "<group>"; };
 		2B546D4F1FC6D54300A235BB /* GTagCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTagCollectionViewLayout.h; sourceTree = "<group>"; };
 		2B546D501FC6D54300A235BB /* GTagCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTagCollectionViewLayout.m; sourceTree = "<group>"; };
+		2B71C48A2028319600A98235 /* NSArray+GBigbang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+GBigbang.h"; sourceTree = "<group>"; };
+		2B71C48B2028319600A98235 /* NSArray+GBigbang.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+GBigbang.m"; sourceTree = "<group>"; };
 		2B772D141F9D9D4A00AB4A82 /* GPinSegmentationListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPinSegmentationListController.h; sourceTree = "<group>"; };
 		2B772D151F9D9D4A00AB4A82 /* GPinSegmentationListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPinSegmentationListController.m; sourceTree = "<group>"; };
 		2B772D171F9DA32400AB4A82 /* GPinHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPinHistoryViewController.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				2B546D501FC6D54300A235BB /* GTagCollectionViewLayout.m */,
 				2B7D99F31F99EA50001A04CB /* GTagFlowItem.h */,
 				2B7D99F41F99EA50001A04CB /* GTagFlowItem.m */,
+				2B71C48A2028319600A98235 /* NSArray+GBigbang.h */,
+				2B71C48B2028319600A98235 /* NSArray+GBigbang.m */,
 				2B7D99F51F99EA50001A04CB /* GTagFlowView.h */,
 				2B7D99F61F99EA50001A04CB /* GTagFlowView.m */,
 				2B7D99FB1F99EC52001A04CB /* GTagFlowContainer.h */,
@@ -340,6 +345,7 @@
 				2B7D99B91F99E389001A04CB /* AppDelegate.m in Sources */,
 				2B7D99EB1F99E720001A04CB /* GWebViewController.m in Sources */,
 				2B2A552C1F9DFBAD007F5CCF /* GNewsDetailViewController.m in Sources */,
+				2B71C48C2028319600A98235 /* NSArray+GBigbang.m in Sources */,
 				2B7D99FD1F99EC52001A04CB /* GTagFlowContainer.m in Sources */,
 				2B772D161F9D9D4A00AB4A82 /* GPinSegmentationListController.m in Sources */,
 				2B7D99FA1F99EA69001A04CB /* GTagFlowView.m in Sources */,

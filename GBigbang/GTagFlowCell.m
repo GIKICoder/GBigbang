@@ -1,6 +1,6 @@
 //
 //  GTagFlowCell.m
-//  GBigbangExample
+//  GBigbang
 //
 //  Created by GIKI on 2017/10/13.
 //  Copyright © 2017年 GIKI. All rights reserved.
