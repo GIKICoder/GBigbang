@@ -8,6 +8,7 @@
 
 #import "GPinHistoryViewController.h"
 #import "GPinSegmentationListController.h"
+#import "HistoryTableViewCell.h"
 #define kHistoryPasteboardKey @"kHistoryPasteboardKey"
 
 @interface GPinHistoryViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -87,9 +88,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewCell"];
+    HistoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"tableViewCell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tableViewCell"];
+        cell = [[HistoryTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tableViewCell"];
     }
     if (indexPath.row < self.datas.count) {
         cell.textLabel.text = self.datas[indexPath.row];

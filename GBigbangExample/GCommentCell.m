@@ -20,9 +20,19 @@ typedef void(^GLabelBigBang) (NSString *text);
 {
     self = [super initWithFrame:frame];
     if (self) {
+        UIMenuItem *copyItem = [[UIMenuItem alloc] initWithTitle:@"bigBang" action:@selector(bigbang:)];
+        [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObjects:copyItem, nil]];
         self.userInteractionEnabled = YES;
         UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressAction:)];
         [self addGestureRecognizer:longPress];
+        
+        [self addSubview:({
+            UIButton * btn = [UIButton new];
+            btn.frame = CGRectMake(0, 10, 100, 40);
+            [btn addTarget:self action:@selector(btnclick:) forControlEvents:UIControlEventTouchUpInside];
+            btn.backgroundColor = [UIColor redColor];
+            btn;
+        })];
     }
     return self;
 }
@@ -30,12 +40,16 @@ typedef void(^GLabelBigBang) (NSString *text);
 - (void)longPressAction:(UIGestureRecognizer *)recognizer {
     [self becomeFirstResponder];
     self.backgroundColor = [UIColor lightGrayColor];
-    UIMenuItem *copyItem = [[UIMenuItem alloc] initWithTitle:@"bigBang" action:@selector(bigbang:)];
-    [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObjects:copyItem, nil]];
+    
     [[UIMenuController sharedMenuController] setTargetRect:self.frame inView:self.superview];
     [[UIMenuController sharedMenuController] setMenuVisible:YES animated:YES];
 }
 
+- (void)btnclick:(UIButton *)btn
+{
+    [[UIMenuController sharedMenuController] setTargetRect:btn.frame inView:self];
+    [[UIMenuController sharedMenuController] setMenuVisible:YES animated:YES];
+}
 // 使label能够成为响应事件
 - (BOOL)canBecomeFirstResponder {
     return YES;

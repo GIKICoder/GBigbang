@@ -27,6 +27,7 @@
 		2B7D99F91F99EA66001A04CB /* GTagFlowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99F41F99EA50001A04CB /* GTagFlowItem.m */; };
 		2B7D99FA1F99EA69001A04CB /* GTagFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99F61F99EA50001A04CB /* GTagFlowView.m */; };
 		2B7D99FD1F99EC52001A04CB /* GTagFlowContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99FC1F99EC52001A04CB /* GTagFlowContainer.m */; };
+		2BAB3D2E207CD30E008A6EBF /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAB3D2D207CD30E008A6EBF /* HistoryTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		2B7D99F61F99EA50001A04CB /* GTagFlowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTagFlowView.m; sourceTree = "<group>"; };
 		2B7D99FB1F99EC52001A04CB /* GTagFlowContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTagFlowContainer.h; sourceTree = "<group>"; };
 		2B7D99FC1F99EC52001A04CB /* GTagFlowContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTagFlowContainer.m; sourceTree = "<group>"; };
+		2BAB3D2C207CD30E008A6EBF /* HistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
+		2BAB3D2D207CD30E008A6EBF /* HistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
 		2BCAF8F71F9EE1F20053C453 /* GBigbang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBigbang.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +150,8 @@
 				2B7D99EA1F99E720001A04CB /* GWebViewController.m */,
 				2B772D171F9DA32400AB4A82 /* GPinHistoryViewController.h */,
 				2B772D181F9DA32400AB4A82 /* GPinHistoryViewController.m */,
+				2BAB3D2C207CD30E008A6EBF /* HistoryTableViewCell.h */,
+				2BAB3D2D207CD30E008A6EBF /* HistoryTableViewCell.m */,
 				2B772D141F9D9D4A00AB4A82 /* GPinSegmentationListController.h */,
 				2B772D151F9D9D4A00AB4A82 /* GPinSegmentationListController.m */,
 				2B2A552A1F9DFBAD007F5CCF /* GNewsDetailViewController.h */,
@@ -341,6 +346,7 @@
 				2B7D99F71F99EA54001A04CB /* GBigbangBox.m in Sources */,
 				2B7D99F81F99EA63001A04CB /* GTagFlowCell.m in Sources */,
 				2B7D99C71F99E389001A04CB /* main.m in Sources */,
+				2BAB3D2E207CD30E008A6EBF /* HistoryTableViewCell.m in Sources */,
 				2B7D99F91F99EA66001A04CB /* GTagFlowItem.m in Sources */,
 				2B7D99B91F99E389001A04CB /* AppDelegate.m in Sources */,
 				2B7D99EB1F99E720001A04CB /* GWebViewController.m in Sources */,
