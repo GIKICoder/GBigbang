@@ -60,10 +60,7 @@
     if (!cell) {
         cell = [[GCommentCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"tableViewCell"];
     }
-//    if (indexPath.row < self.datas.count) {
-//        cell.textLabel.text = self.datas[indexPath.row];
-//    }
-    
+
     return cell;
 }
 

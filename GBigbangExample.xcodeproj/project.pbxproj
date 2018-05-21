@@ -28,6 +28,7 @@
 		2B7D99FA1F99EA69001A04CB /* GTagFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99F61F99EA50001A04CB /* GTagFlowView.m */; };
 		2B7D99FD1F99EC52001A04CB /* GTagFlowContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7D99FC1F99EC52001A04CB /* GTagFlowContainer.m */; };
 		2BAB3D2E207CD30E008A6EBF /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAB3D2D207CD30E008A6EBF /* HistoryTableViewCell.m */; };
+		2BE82B8220B2EA3400E0608C /* GBigbangModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BE82B8120B2EA3400E0608C /* GBigbangModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		2BAB3D2C207CD30E008A6EBF /* HistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
 		2BAB3D2D207CD30E008A6EBF /* HistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryTableViewCell.m; sourceTree = "<group>"; };
 		2BCAF8F71F9EE1F20053C453 /* GBigbang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBigbang.h; sourceTree = "<group>"; };
+		2BE82B8020B2EA3400E0608C /* GBigbangModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBigbangModel.h; sourceTree = "<group>"; };
+		2BE82B8120B2EA3400E0608C /* GBigbangModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBigbangModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				2B772D151F9D9D4A00AB4A82 /* GPinSegmentationListController.m */,
 				2B2A552A1F9DFBAD007F5CCF /* GNewsDetailViewController.h */,
 				2B2A552B1F9DFBAD007F5CCF /* GNewsDetailViewController.m */,
+				2BE82B8020B2EA3400E0608C /* GBigbangModel.h */,
+				2BE82B8120B2EA3400E0608C /* GBigbangModel.m */,
 				2B2A552D1F9E0B84007F5CCF /* GCommentCell.h */,
 				2B2A552E1F9E0B84007F5CCF /* GCommentCell.m */,
 				2B7D99BD1F99E389001A04CB /* Main.storyboard */,
@@ -342,6 +347,7 @@
 			files = (
 				2B7D99BC1F99E389001A04CB /* ViewController.m in Sources */,
 				2B2A552F1F9E0B84007F5CCF /* GCommentCell.m in Sources */,
+				2BE82B8220B2EA3400E0608C /* GBigbangModel.m in Sources */,
 				2B772D191F9DA32400AB4A82 /* GPinHistoryViewController.m in Sources */,
 				2B7D99F71F99EA54001A04CB /* GBigbangBox.m in Sources */,
 				2B7D99F81F99EA63001A04CB /* GTagFlowCell.m in Sources */,
