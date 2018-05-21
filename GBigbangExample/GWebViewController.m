@@ -21,7 +21,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-       GTagFlowContainer *container = [GTagFlowContainer new];
+        GTagFlowContainer *container = [GTagFlowContainer new];
         self.container = container;
         __weak typeof(self) weakSelf = self;
         self.container.actionBlock = ^(NSString *actionTitle, NSString *newText) {
@@ -67,7 +67,7 @@
     }];
     [self.container configDatas:flows.copy];
     [self.container show];
-
+    
 }
 
 - (void)clickTitle:(NSString*)title text:(NSString*)text
@@ -136,19 +136,6 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com/home/news/data/newspage?nid=5738560076945486870&n_type=0&p_from=1&dtype=-1"]]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
