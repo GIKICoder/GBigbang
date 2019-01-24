@@ -55,7 +55,14 @@
 -(void)bigbang:(id)sender
 {
     NSString* selection = [self stringByEvaluatingJavaScriptFromString:@"window.getSelection().toString()"];
-    NSArray * array = [GBigbangBox bigBang:selection];
+    
+    CFTimeInterval startTime = CACurrentMediaTime();
+    NSArray * array2 = [GBigbangBox bigBang:selection];
+    CFTimeInterval endTime = CACurrentMediaTime();
+    CFTimeInterval consumingTime = endTime - startTime;
+    NSLog(@"耗时：%@", @(consumingTime));
+    
+    NSArray * array = [GBigbangBox bigBangWithOption:PINSegmentationOptionsKeepSymbols string:selection];
     __block NSMutableArray *flows = [NSMutableArray array];
     [array enumerateObjectsUsingBlock:^(GBigbangItem  * obj, NSUInteger idx, BOOL * _Nonnull stop) {
         GTagFlowItem *layout = [GTagFlowItem tagFlowItemWithText:obj.text];

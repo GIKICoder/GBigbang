@@ -57,6 +57,54 @@
 
 
 /**
+ https://github.com/cyanzhong/segmentation
+ */
++ (NSArray<GBigbangItem *> *)bigBangWithOption:(PINSegmentationOptions)options string:(NSString*)string
+{
+    
+    BOOL deduplication = options & PINSegmentationOptionsDeduplication;
+    BOOL keepSymbols = options & PINSegmentationOptionsKeepSymbols;
+    CFOptionFlags flags = keepSymbols ? kCFStringTokenizerUnitWordBoundary : kCFStringTokenizerUnitWord;
+    
+    NSMutableArray<GBigbangItem *> *results = [NSMutableArray array];
+    CFRange textRange = CFRangeMake(0, string.length);
+    CFLocaleRef currentRef = CFLocaleCopyCurrent();
+    CFStringTokenizerRef tokenizerRef = CFStringTokenizerCreate(NULL, (CFStringRef)string, textRange, flags, currentRef);
+    CFStringTokenizerAdvanceToNextToken(tokenizerRef);
+    NSMutableSet *resultSet = [NSMutableSet set];
+    
+    while (YES) {
+        
+        CFRange tokenRange = CFStringTokenizerGetCurrentTokenRange(tokenizerRef);
+        
+        if (tokenRange.location == kCFNotFound && tokenRange.length == 0) {
+            break;
+        }
+        
+        NSString *token = [string substringWithRange:NSMakeRange(tokenRange.location, tokenRange.length)];
+        NSString *item = [token stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        if (item.length > 0) {
+            if (deduplication) {
+                if (![resultSet containsObject:item]) {
+                    [results addObject:[GBigbangItem bigbangText:item isSymbol:NO]];
+                }
+                [resultSet addObject:item];
+            } else {
+                [results addObject:[GBigbangItem bigbangText:item isSymbol:NO]];
+            }
+        }
+        
+        CFStringTokenizerAdvanceToNextToken(tokenizerRef);
+    }
+    
+    CFRelease(tokenizerRef);
+    CFRelease(currentRef);
+    
+    return results;
+}
+
+/**
  是否为nil 或者全部为空格
  
  @return <#return value description#>

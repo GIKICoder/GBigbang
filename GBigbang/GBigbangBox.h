@@ -9,10 +9,20 @@
 #import <Foundation/Foundation.h>
 
 @class GBigbangItem;
-
+typedef NS_OPTIONS(NSInteger, PINSegmentationOptions) {
+    PINSegmentationOptionsNone              = 0,
+    PINSegmentationOptionsDeduplication     = 1 << 0,
+    PINSegmentationOptionsKeepEnglish       = 1 << 1,
+    PINSegmentationOptionsKeepSymbols       = 1 << 2,
+};
 @interface GBigbangBox : NSObject
 
 + (NSArray<GBigbangItem*>*)bigBang:(NSString*)string;
+
+/**
+ https://github.com/cyanzhong/segmentation
+ */
++ (NSArray<GBigbangItem *> *)bigBangWithOption:(PINSegmentationOptions)options string:(NSString*)string;
 
 @end
 
